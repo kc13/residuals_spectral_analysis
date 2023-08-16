@@ -1,2 +1,0 @@
-see generate_oscil_ex.m in figures/fig2 to generate 
-new spike trains (same data used for fig 2-3)
