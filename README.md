@@ -10,6 +10,6 @@ The majority of the code included here is original to this repository.  An excep
 
 For the remaining, original code, contributors include Karin Cox, Daisuke Kase, and Rob Turner, affiliated with the University of Pittsburgh. This research was funded in part by Aligning Science Across Parkinson’s (ASAP), through the Michael J. Fox Foundation for Parkinson’s Research (MJFF). 
 
-Future releases will include code associated with analyses and simulations that did not directly contribute to figures or tables, updated documentation.  Once a preprint is posted, the reference will also be provided here.
+Future releases will include code associated with analyses and simulations that did not directly contribute to figures or tables, and updated documentation.  Once a preprint is posted, the reference will also be provided here.
 
 
