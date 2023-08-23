@@ -1,0 +1,7 @@
+The result indicating slightly better performance for the
+indicators based residuals method over the spline implementation
+is found by loading 'subsample1000_stdFR_stdRP_splines.mat'
+and viewing the statsF and related structs, which were outputs of 
+a paired t-test comparing the indicators-spline pAUC values for 
+the matched spike trains. "F" refers to the fact that the pROC
+curves were cropped to span identical ranges along the FA axis.  

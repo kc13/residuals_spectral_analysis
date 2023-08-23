@@ -1,0 +1,11 @@
+The result indicating slightly better performance for the
+global versus local shuffling implementations
+is found by loading 'subsample1000_res_shufG_shufL.mat'
+and viewing the statsF and related structs, which were outputs of 
+paired t-tests comparing the pAUC differences for all possible 
+combinations of global and local shuffling (G,L) and the residuals
+method (R). The order of the method codes in the struct fields
+indiates the specific pAUC differences that were tested (e.g., 
+GL = global shuffling pAUCs - local shuffling pAUCs).
+"F" refers to the fact that the pROC curves were cropped 
+to span identical ranges along the FA axis.  
