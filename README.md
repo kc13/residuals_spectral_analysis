@@ -1,15 +1,13 @@
 # residuals_spectral_analysis
 
-This repository shares the Matlab code associated with the manuscript "Detecting rhythmic spiking through the power spectra of point process model residuals."
+This repository shares the Matlab code associated with the preprint "Detecting rhythmic spiking through the power spectra of point process model residuals."
 
-This represents the initial release of the code, sufficient for recreating the manuscript figures and tables, and the analyses and simulations that inform them. To recreate a figure or table, navigate to the corresponding subfolder under "figures" or "tables", and run the .m file beginning with the "fig" or "table" prefix.  Some subfolders include additional .m files that may be used to recreate relevant simulations or analyses. The code files are generally set up so that the necessary data files may be located automatically, assuming that that user maintains the repository's file organization, and executes the .m file from within the directory in which it is located. The only exceptions to this are the .m files for generating figures S11 and S17. In these cases, it is necessary to first run scripts to create data files that the figure-generation code requires. The data files are not supplied here due to their large size.
+This version, 0.2.0, represents the 3rd pre-release of the code. A new release will be published once the preprint is posted to bioRxiv, and the preprint DOI will be provided here.
 
-For the simulation code, note that information about the random number generator seeds used for the manuscript simulations is provided when available, but in some cases this may not be sufficient to exactly recreate identical simulation output.  This is due to the use of parfor loops in the simulation code.  See https://www.mathworks.com/help/parallel-computing/repeat-random-numbers-in-parfor-loops.html for more information.
+This code enables regeneration of all manuscript figures and tables, and the analyses and simulations that inform them. Additional documentation regarding the code is available in the "figures", "tables", and "other_analyses" folders. All Matlab files were originally generated using version R2022a, and draw upon multiple optional toolboxes that Mathworks provides for that version. 
 
-The majority of the code included here is original to this repository.  An exception is the code located in the "Modified-Spline-Regression" folder.  This code was obtained from https://github.com/MehradSm/Modified-Spline-Regression.
+The majority of the code is original to this repository. An exception is the code located in the Modified-Spline-Regression folder. This code was obtained from https://github.com/MehradSm/Modified-Spline-Regression. See the documentation inside the folder for more details. 
 
-For the remaining, original code, contributors include Karin Cox, Daisuke Kase, and Rob Turner, affiliated with the University of Pittsburgh. This research was funded in part by Aligning Science Across Parkinson’s (ASAP), through the Michael J. Fox Foundation for Parkinson’s Research (MJFF). 
+For the remaining, original code, contributors include Karin Cox, Daisuke Kase, and Rob Turner, affiliated with the University of Pittsburgh.
 
-Future releases will include code associated with analyses and simulations that did not directly contribute to figures or tables, and updated documentation.  Once a preprint is posted, the reference will also be provided here.
-
-
+This research was funded in part by Aligning Science Across Parkinson’s (ASAP-020519) through the Michael J. Fox Foundation for Parkinson’s Research (MJFF). For the purpose of open access, the authors have applied a GNU General Public License v3.0 to this repository. The author will apply a Creative Commons Attribution 4.0 International (CC BY) public copyright license to all Author Accepted Manuscripts associated with this repository. 
