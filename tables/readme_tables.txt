@@ -1,0 +1,1 @@
+To generate a table, navigate to the corresponding folder in the tables directory, and run the .m file prefix with "table". The code files will expand the Matlab search path with addpath() calls so that the necessary code dependencies from the other folders, and the input data files (.mat) are located automatically, assuming maintenance of the repository's file organization. 
