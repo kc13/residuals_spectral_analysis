@@ -10,4 +10,4 @@ The majority of the code is original to this repository. An exception is the cod
 
 For the remaining, original code, contributors include Karin Cox, Daisuke Kase, and Rob Turner, affiliated with the University of Pittsburgh.
 
-This research was funded in part by Aligning Science Across Parkinson’s (ASAP-020519) through the Michael J. Fox Foundation for Parkinson’s Research (MJFF). For the purpose of open access, the authors have applied a GNU General Public License v3.0 to this repository. The author will apply a Creative Commons Attribution 4.0 International (CC BY) public copyright license to all Author Accepted Manuscripts associated with this repository. 
+This research was funded in part by Aligning Science Across Parkinson’s (ASAP-020519) through the Michael J. Fox Foundation for Parkinson’s Research (MJFF). For the purpose of open access, the authors have applied a GNU General Public License v3.0 to this repository. The authors will apply a Creative Commons Attribution 4.0 International (CC BY) public copyright license to all Author Accepted Manuscripts associated with this repository. 
