@@ -43,7 +43,7 @@ tvars = {'NW','FO','PBO','PB','M','I','RP'};
 vartypes = {'double','double','double','double','double','double','double'};
 nV = numel(tvars);
 nR = nNW*nFO*nPB*nM*nIter;
-T = table('Size',[nR nV],'VariableNames',tvars,'VariableTypes',vartypes)
+T = table('Size',[nR nV],'VariableNames',tvars,'VariableTypes',vartypes);
 iCol = [1:nIter]';
 
 %%
