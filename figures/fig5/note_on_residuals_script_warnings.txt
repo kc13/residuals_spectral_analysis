@@ -1,0 +1,16 @@
+When running run_residuals_nhp_data.m: Note that warnings
+concerning rank deficiency do not apply to the core analyses 
+necessary for execution of the residuals method, but are the 
+result of additional models fit to aid in the generation
+of illustrations.  In the recovery period estimation step,
+a series of right-shifted exponential curves are fit to the 
+interspike interval distribution. Deviance difference stats
+are recorded as a function of the fit's starting position, 
+and the process can be aborted as soon as a local maximum in 
+the deviance difference is detected. In the current 
+implementation, however, the fitting process is performed
+for all starting positions, to aid in the generation of 
+visualizations of how the deviance difference statistic
+varies. Towards the end of this process, some models will 
+be flagged as rank deficient. These models have no impact
+on the reported figures/results in the manuscript.
