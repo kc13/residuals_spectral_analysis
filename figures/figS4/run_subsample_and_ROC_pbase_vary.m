@@ -183,10 +183,7 @@ for NW = 1:nNW
 end %NW    
 toc;
 %%
-outfile = sprintf('subsample%u_%s.mat',nSS,string(getDateChar('MMddyy')));
-outpath = fullfile(datadir,outfile);
-fprintf('saving %s (no AUC yet)\n',outpath);
-save(outpath)
+
 
 hrMns = structfun(@(x) squeeze(mean(x,1))',hrAll,'UniformOutput',false);
 faMns = structfun(@(x) squeeze(mean(x,1))',faAll,'UniformOutput',false);
