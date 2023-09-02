@@ -206,9 +206,7 @@ for f1 = 1:nF1
         faMn = faMns.(fld1)(s,:);
         hrMn = hrMns.(fld1)(s,:);
         [faMatCropFA.(fld1){s},hrMatCropFA.(fld1){s}] = cropToOneDimRange(faMn,hrMn,faMaxLB,faMinUB);
-        [faMatCropHR.(fld1){s},hrMatCropHR.(fld1){s}] = cropToOneDimRange(hrMn,faMn,hrMaxLB,hrMinUB); 
-        pAUCf.(fld1)(s) = trapz(faMatCropFA.(fld1){s},hrMatCropFA.(fld1){s});
-        pAUCh.(fld1)(s) = trapz(hrMatCropHR.(fld1){s},faMatCropHR.(fld1){s});        
+        pAUCf.(fld1)(s) = trapz(faMatCropFA.(fld1){s},hrMatCropFA.(fld1){s});       
     end %s
 end %f
 %%
