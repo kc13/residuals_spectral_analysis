@@ -15,8 +15,8 @@ datadir = pwd;
 addpath(scriptdirs{:})
 addpath(datadir)
 
-%%
-write = false;
+%% set write prefs down at bottom
+
 
 % to construct file names, loops
 nIter = 100;
@@ -43,7 +43,7 @@ tvars = {'NW','FO','PBO','PB','M','I','RP'};
 vartypes = {'double','double','double','double','double','double','double'};
 nV = numel(tvars);
 nR = nNW*nFO*nPB*nM*nIter;
-T = table('Size',[nR nV],'VariableNames',tvars,'VariableTypes',vartypes);
+T = table('Size',[nR nV],'VariableNames',tvars,'VariableTypes',vartypes)
 iCol = [1:nIter]';
 
 %%
@@ -78,7 +78,9 @@ for NW = 1:nNW
 end %NW
 
 %%  will write with a suffix to not overwrite existing fig 4 data
+write = true;
 suffix = '_new';
+
 if write
     outdir = datadir;
     outfile = ['RPtable_stdFR_stdRP.',suffix,'mat'];

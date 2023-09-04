@@ -15,8 +15,8 @@ datadir = pwd;
 addpath(scriptdirs{:})
 addpath(datadir)
 
-%%
-write = false;
+%% set write prefs down at bottom
+
 
 % to construct file names, loops
 nIter = 100;
@@ -79,6 +79,7 @@ end %NW
 
 %%  will write with a suffix to not overwrite existing fig 4 data
 suffix = '_new';
+write = false;
 if write
     outdir = datadir;
     outfile = ['RPtable_stdFR_RPk0.4nr4',suffix,'.mat'];

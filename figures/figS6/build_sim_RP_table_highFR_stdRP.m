@@ -15,8 +15,7 @@ datadir = pwd;
 addpath(scriptdirs{:})
 addpath(datadir)
 
-%%
-write = false;
+%% set write prefs down at bottom
 
 % to construct file names, loops
 nIter = 100;
@@ -78,6 +77,8 @@ for NW = 1:nNW
 end %NW
 
 %%  will write with a suffix to not overwrite existing fig 4 data
+write = false;
+
 suffix = '_new';
 if write
     outdir = datadir;
