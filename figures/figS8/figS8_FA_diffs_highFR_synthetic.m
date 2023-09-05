@@ -168,7 +168,7 @@ end %f
 testwrite = true;
 if testwrite
     outdir = pwd;
-    outfile = 'figS3_FA_diffs_highFR_synthetic.tif';
+    outfile = 'figS8_FA_diffs_highFR_synthetic.tif';
     mkdir(outdir)
     outpath = fullfile(outdir,outfile);
     set(gcf,'color','w');
