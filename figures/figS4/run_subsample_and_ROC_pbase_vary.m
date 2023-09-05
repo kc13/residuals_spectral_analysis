@@ -19,8 +19,6 @@ addpath(scriptdirs{:})
 addpath(datadir)
 
 %% set write prefs down at bottom
-outdir = pwd;
-suffix = 'pbase_vary_new'; 
 
 %% no random seed option (original random 
 % seeds not located)
@@ -226,6 +224,9 @@ end %fp
 
 
 %%
+outdir = pwd;
+suffix = 'pbase_vary_new'; 
+
 write = true;
 outfile = sprintf('subsample%u_%s.mat',nSS,suffix);
 outpath = fullfile(datadir,outfile);

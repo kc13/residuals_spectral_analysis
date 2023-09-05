@@ -23,8 +23,7 @@ randfile = 'rnd_info_subsample_highFR_stdRP.mat';
 randpath = fullfile(randdir,randfile);
 
 %% set write prefs down at bottom
-outdir = pwd;
-suffix = 'highFR_stdRP_new'; 
+
 
 %% rnd seed: due to use of parfor, some differences
 % in output will remain relative to stored output (see readme)
@@ -218,7 +217,8 @@ for fp = 1:nCO
         = ttest(pAUCf.(fldA),pAUCf.(fldB));
 end %fp
 
-
+outdir = pwd;
+suffix = 'highFR_stdRP_new'; 
 write = false;
 outfile = sprintf('subsample%u%s.mat',nSS,suffix);
 outpath = fullfile(datadir,outfile);
