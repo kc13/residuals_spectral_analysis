@@ -66,8 +66,7 @@ for NW = 1:nNW
 		sim_out = struct(); 
 		simOpt.f_osc = foArr(FO);
 		pbase_arr = (simOpt.f_osc + pbase_offset)/1000;
-	    % new suffix so as to not overwrite files already present
-        outname = sprintf('len%uf_osc%uiter%u_new.mat',simOpt.len,simOpt.f_osc,nIter);		
+        outname = sprintf('len%uf_osc%uiter%u.mat',simOpt.len,simOpt.f_osc,nIter);		
 		for pb = 1:nPB
 			simOpt.pbase = pbase_arr(pb);
 			fldstrPB = sprintf('pb%g',simOpt.pbase*1000);
