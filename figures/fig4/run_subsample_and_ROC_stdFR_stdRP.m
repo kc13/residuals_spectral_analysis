@@ -27,7 +27,7 @@ randpath = fullfile(randdir,randfile);
 
 %% rnd seed: due to use of parfor, some differences
 % in output will remain relative to stored output (see readme)
-reuseRndSeed = false;
+reuseRndSeed = true;
 
 if reuseRndSeed
 	load(randpath)
@@ -171,8 +171,8 @@ for NW = 1:nNW
 			for f1 = 1:nF1
 				fld1 = fld1arr{f1};
 				for a = 1:nA  
-					hrAll.(fld1)(FN,a,s) = mean(hitMat.(fld1)(:,:,a),'all');
-					faAll.(fld1)(FN,a,s) = mean(faMat.(fld1)(:,:,a),'all'); 
+					hrAll.(fld1)(FN,a,s) = mean(hitMat.(fld1)(:,m_arr~=0,a),'all');
+					faAll.(fld1)(FN,a,s) = mean(faMat.(fld1)(:,m_arr~=0,a),'all'); 
 				end %a
 			end % f1
 		end %s		
@@ -218,8 +218,8 @@ for fp = 1:nCO
 end %fp
 
 outdir = pwd;
-suffix = 'stdFR_stdRP_new'; 
-write = false;
+suffix = '_stdFR_stdRP_new'; 
+write = true;
 outfile = sprintf('subsample%u%s.mat',nSS,suffix);
 outpath = fullfile(datadir,outfile);
 

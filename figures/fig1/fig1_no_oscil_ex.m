@@ -34,7 +34,7 @@ ax = specStatFig(shuf_results,[],'S1',figopt);
 tistr = sprintf('base FR = %u Hz',simOpt.pbase*1000);
 T = title(tistr);
 %% adjust this section to save out .tif
-testwrite = false; 
+testwrite = true; 
 if testwrite
     outdir = pwd;
     outfile = 'fig1_no_oscil_ex.tif';
@@ -42,6 +42,8 @@ if testwrite
     set(gcf,'color','w');
     set(gcf,'InvertHardCopy','off')
     fprintf('saving %s\n',outpath)
-    print(gcf, outpath, '-dtiff', '-r300' ); 
+    print(gcf, outpath, '-dtiff', '-r300' );
+	fprintf('saving %s',strrep(outpath,'.tif','.eps'));
+	print(gcf, strrep(outpath,'.tif','.eps'), '-depsc', '-r300' ); 
 end
 %%

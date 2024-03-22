@@ -62,10 +62,12 @@ plotMdlDD(rpInfo,HLix,priColors,figprefs);
 %%
 h = .1; w = .1;
 nR = TL.GridSize(1);
+anns = cell(nR,1);
 for r = 1:nR
     if r == 1; dy = 0.035; end 
-    annotation(gcf,'textbox',[0 1-((1/nR)*(r-1))-h-dy h h],...
-        'Units','Normalized','String',char('A'+(r-1)),'EdgeColor','none','FontSize',10)
+    ann = annotation(gcf,'textbox',[0 1-((1/nR)*(r-1))-h-dy h h],...
+        'Units','Normalized','String',['(',char('a'+(r-1)),')'],'EdgeColor','none','FontSize',10);
+    ann.Position(1) = -0.015; % won't allow this in annotation arg
 end
 
 %%
@@ -77,5 +79,7 @@ if testwrite
     set(gcf,'color','w');
     set(gcf,'InvertHardCopy','off')
     fprintf('saving %s\n',outpath)
-    print(gcf, outpath, '-dtiff', '-r300' );  	
+    print(gcf, outpath, '-dtiff', '-r300' );
+	fprintf('saving %s\n',strrep(outpath,'.tif','.eps'));
+	print(gcf, strrep(outpath,'.tif','.eps'), '-depsc', '-r300' );  	
 end %if

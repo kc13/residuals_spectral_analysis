@@ -160,7 +160,7 @@ for f = 1:nFO
                 tx = text(0.05*100,0.75*yD+yL(1),sprintf('f_{osc} = %u Hz',fo),'FontSize',7);
             end %if				
 		end %p
-	end %n
+    end %n
 end %f
 
 
@@ -174,5 +174,7 @@ if testwrite
     set(gcf,'color','w');
     set(gcf,'InvertHardCopy','off')
     fprintf('saving %s\n',outpath)
-    print(gcf, outpath, '-dtiff', '-r300' );  
+    print(gcf, outpath, '-dtiff', '-r300' );
+	fprintf('saving %s\n',strrep(outpath,'.tif','.eps'));
+	print(gcf, strrep(outpath,'.tif','.eps'), '-depsc', '-r300' );  
 end

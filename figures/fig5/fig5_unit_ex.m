@@ -70,7 +70,7 @@ for r = [1:nR]
     r2 = nR-r+1;
     pos = F.Children.Children(r*2-1).Position;
     annotation(F,'textbox',[0 pos(2)+pos(4)+dy(r) h h],...
-        'Units','Normalized','String',char('A'+(r2-1)),...
+        'Units','Normalized','String',['(',char('a'+(r2-1)),')'],...
         'EdgeColor','none','FontSize',10)
 end
 %%
@@ -83,7 +83,9 @@ if testwrite
     set(gcf,'color','w');
     set(gcf,'InvertHardCopy','off')
     fprintf('saving %s\n',outpath)
-    print(gcf, outpath, '-dtiff', '-r300' );  
+    print(gcf, outpath, '-dtiff', '-r300' );
+	fprintf('saving %s\n',strrep(outpath,'.tif','.eps'));
+	print(gcf, strrep(outpath,'.tif','.eps'), '-depsc', '-r300' );  
 end
 %%
 

@@ -72,8 +72,8 @@ end
 tvars = {'C','NW','FO','PBO','PB','M','HR'};
 nV = numel(tvars);
 vartypes = [{'char'};repmat({'double'},nV-1,1)];
-nR = numel(codeArr)*nNW*nPBO*nM; 
-mnTbl = table('Size',[nR nV],'VariableNames',tvars,'VariableTypes',vartypes);
+nRtbl = numel(codeArr)*nNW*nPBO*nM; 
+mnTbl = table('Size',[nRtbl nV],'VariableNames',tvars,'VariableTypes',vartypes);
 rep6 = @(x) repmat(x,nM,1);
 
 %%
@@ -169,5 +169,7 @@ if testwrite
     set(gcf,'color','w');
     set(gcf,'InvertHardCopy','off')
     fprintf('saving %s\n',outpath)
-    print(gcf, outpath, '-dtiff', '-r300' );  
+    print(gcf, outpath, '-dtiff', '-r300' );
+	fprintf('saving %s\n',strrep(outpath,'.tif','.eps'));
+	print(gcf, strrep(outpath,'.tif','.eps'), '-depsc', '-r300' );  
 end

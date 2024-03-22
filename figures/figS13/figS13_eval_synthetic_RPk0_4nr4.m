@@ -317,13 +317,13 @@ nR = TL.GridSize(1);
 for r = 1:nR
     if r == 1; dy = 0.035; elseif r == 2; dy = 0.005; else; dy = 0; end
     annotation(gcf,'textbox',[0 1-((1/nR)*(r-1))-h-dy h h],...
-        'Units','Normalized','String',char('A'+(r-1)),'EdgeColor','none','FontSize',10)
+        'Units','Normalized','String',['(',char('a'+(r-1)),')'],'EdgeColor','none','FontSize',10)
 end
 annotation(gcf,'textbox',[0.5 1-((1/nR)*(r-1))-h h h],...
-        'Units','Normalized','String',char('A'+(r)),'EdgeColor','none','FontSize',10)
+        'Units','Normalized','String',['(',char('a'+(r)),')'],'EdgeColor','none','FontSize',10)
 		
 %%		
-testwrite = true;
+testwrite = false;
 if testwrite
     outdir = pwd;
     outfile = 'figS13_eval_synthetic_RPk0.4nr4.tif';
@@ -332,5 +332,30 @@ if testwrite
     set(gcf,'color','w');
     set(gcf,'InvertHardCopy','off')
     fprintf('saving %s\n',outpath)
-    print(gcf, outpath, '-dtiff', '-r300' );  
+    print(gcf, outpath, '-dtiff', '-r300' );
+	fprintf('saving %s',strrep(outpath,'.tif','.eps'));
+	print(gcf, strrep(outpath,'.tif','.eps'), '-depsc', '-r300' );  
 end
+
+%% ratios of hit rates and FAs at p < 0.05 corrected level
+hrMat = S.hrMns;
+faMat = S.faMns;
+%%
+aIX = S.aIX;
+alphaArr = S.alphaArr;
+hrVec05 = structfun(@(x) x(:,aIX),hrMat,'UniformOutput', false);
+faVec05 = structfun(@(x) x(:,aIX),faMat,'UniformOutput', false);
+
+%%
+mnHR05 = structfun(@(x) mean(x), hrVec05, 'UniformOutput', false);
+mnFA05 = structfun(@(x) mean(x), faVec05, 'UniformOutput', false);
+
+%% confirm sig diffs
+[hHV,pHV,ciHV,statsHV] = ttest(hrVec05.res,hrVec05.comp);
+[hFV,pFV,ciFV,statsFV] = ttest(faVec05.res,faVec05.comp);
+
+%% summary statement
+fprintf('at alpha_c = %0.2f, residuals mean HR = %0.2f%%, shuffling mean HR = %0.2f%%\n',...
+    alphaArr(aIX),mnHR05.res*100,mnHR05.comp*100);
+fprintf('at alpha_c = %0.2f, residuals mean FA = %0.2f%%, shuffling mean FA = %0.2f%%\n',...
+    alphaArr(aIX),mnFA05.res*100,mnFA05.comp*100);

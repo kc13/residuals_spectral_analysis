@@ -19,7 +19,6 @@ LFpath = fullfile(datadir,LFfile);
 HFfile = 'len122880f_osc32iter1.mat';
 HFpath = fullfile(datadir,HFfile);
 %%
-
 fprintf('loading %s\n',LFpath)
 L = load(LFpath);
 fprintf('loading %s\n',HFpath)
@@ -101,7 +100,7 @@ h = .1; w = .1;
 nR = 4; 
 for r = 1:2
     annotation(gcf,'textbox',[0 1-((1/nR)*(r-1))-h h h],...
-        'Units','Normalized','String',char('A'+(r-1)),'EdgeColor','none','FontSize',10)
+        'Units','Normalized','String',['(',char('a'+(r-1)),')'],'EdgeColor','none','FontSize',10)
 end
 
 %%		
@@ -114,5 +113,7 @@ if testwrite
     set(gcf,'color','w');
     set(gcf,'InvertHardCopy','off')
     fprintf('saving %s\n',outpath)
-    print(gcf, outpath, '-dtiff', '-r300' );  
+    print(gcf, outpath, '-dtiff', '-r300' );
+	fprintf('saving %s\n',strrep(outpath,'.tif','.eps'));
+	print(gcf, strrep(outpath,'.tif','.eps'), '-depsc', '-r300' );  
 end
