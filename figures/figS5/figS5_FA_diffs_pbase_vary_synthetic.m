@@ -165,6 +165,6 @@ if testwrite
     set(gcf,'InvertHardCopy','off')
     fprintf('saving %s\n',outpath)
     print(gcf, outpath, '-dtiff', '-r300' );
-	fprintf('saving %s\n',strrep(outpath,'.tif','.eps'));
-	print(gcf, strrep(outpath,'.tif','.eps'), '-depsc', '-r300' );  
+    fprintf('saving %s\n',strrep(outpath,'.tif','.eps'));
+	print(gcf, strrep(outpath,'.tif','.eps'), '-depsc', '-r300' ); 
 end
