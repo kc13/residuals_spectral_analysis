@@ -186,7 +186,7 @@ xlbl = 'count (of 540 cells x 100 iterations)';
 xlabel(xlbl)
 ylbl = 'estimated duration (ms)';
 ylabel(ylbl)
-tstr = 'recovery period estimates, target = 9 ms';
+tstr = "recovery period estimates, target = " + num2str(S.simOpt.nr) + " ms";
 med = median(allRP);
 IQR = iqr(allRP);
 txtstr = {sprintf('median = %u ms',med); sprintf('iqr = %u ms',IQR)};
