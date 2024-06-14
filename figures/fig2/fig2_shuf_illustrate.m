@@ -157,10 +157,12 @@ grid on;
 text(lblx,lbly,'shuffled')
 ylim([-0.1 0.15])
 yticks('')
-xlabel('msec')
 set(gca,'XColor','none','YColor','none')
 grid off
-title('illustration of ISI shuffling')
+TI2 = title('illustration of ISI shuffling');
+xlb = xlabel('ISI durations (msec)');
+xlb.Position = [TI2.Position(1) -0.1 0];
+xlb.Color = 'k';
 %% panel C shuffling (comp)ensation
 nexttile(TL,5) % panel C, High FR
 Htistr = sprintf('shuffle-corrected (%u Hz/%u%%)',H.simOpt.pbase*1000,H.m*100);

@@ -1,2 +1,3 @@
 scripts to recreate the analyses
-may be found in figures/fig4
+may be found in figures/figS4
+
