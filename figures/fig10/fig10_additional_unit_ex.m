@@ -14,7 +14,7 @@ scriptdirs = {pwd;
 addpath(scriptdirs{:})
 %%
 datadir = pwd;
-datafile = 'fig59_fig10_unit_ex.mat'; 
+datafile = 'fig9_fig10_unit_ex.mat'; 
 datapath = fullfile(datadir,datafile);
 
 %%
