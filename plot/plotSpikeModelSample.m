@@ -2,6 +2,9 @@ function [ax] = plotSpikeModelSample(data,msecs,category,varargin)
 %plotPosterSpikeSample.m 2/21/23
 % 6/19/23 updating to allow more formatting flexibility
 % 7/2/23 updating to says "oscillation" in full    
+% 7/29/24 updating axes and titles to be consistent
+%           with RP term notation in main text
+
     if ~isempty(varargin)
         figopt = varargin{1};
         add_annotate = optCheck(figopt,'add_annotate',false,[true false]);
@@ -32,8 +35,8 @@ function [ax] = plotSpikeModelSample(data,msecs,category,varargin)
     titleMap = containers.Map();
     titleMap('spikes') = 'spike train';
     titleMap('oscil') = 'steady state (base FR + oscillation)';
-    titleMap('rp') = 'recovery period';
-    titleMap('pspk') = 'spike probability = SS x RP';
+    titleMap('rp') = 'exponential recovery term';
+    titleMap('pspk') = 'spike probability = SS x recovery term';
 
     xlblMap = containers.Map();
     xlblMap('spikes') = 'data segment timestamp (1 ms bins)'; %'timestamp (1 ms bins)'; 
@@ -44,7 +47,7 @@ function [ax] = plotSpikeModelSample(data,msecs,category,varargin)
     ylblMap = containers.Map();
     ylblMap('spikes') = 'occurrence';
     ylblMap('oscil') = 'p_{SS}(t) (zoomed)';  % this will only make sense if show eq
-    ylblMap('rp') = 'p_{RP}(t)'; 
+    ylblMap('rp') = 'min(k^{n_r+1-n},1)';
     ylblMap('pspk') = 'p_{spk}(t) (zoomed)';
 
     ylimMap = containers.Map();
