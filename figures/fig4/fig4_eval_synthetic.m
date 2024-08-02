@@ -126,7 +126,7 @@ nexttile(TL)
 TLB = tiledlayout(TL,2,3,'Padding','compact','TileSpacing','compact'); 
 TLB.Layout.Tile = 2;
 TLB.TileIndexing = 'columnmajor';
-tstr = 'results sample #2: base FR-oscil. freq. = 2 Hz, moduation = 60%, 100 simulation iterations per cell';
+tstr = 'results sample #2: base FR-oscil. freq. = 2 Hz, modulation = 60%, 100 simulation iterations per cell';
 TLB.Title.String = tstr;
 TLB.Title.FontSize = 9;
 axis off; box off;

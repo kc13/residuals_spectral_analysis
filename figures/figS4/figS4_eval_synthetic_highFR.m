@@ -124,7 +124,7 @@ nexttile(TL)
 TLB = tiledlayout(TL,2,3,'Padding','compact','TileSpacing','compact'); 
 TLB.Layout.Tile = 2;
 TLB.TileIndexing = 'columnmajor';
-tstr = sprintf('results sample #2: base FR-oscil. freq. = %u Hz, moduation = 60%, 100 simulation iterations per cell',pbo);
+tstr = sprintf('results sample #2: base FR-oscil. freq. = %u Hz, modulation = 60%%, 100 simulation iterations per cell',pbo);
 TLB.Title.String = tstr;
 TLB.Title.FontSize = 9;
 axis off; box off;
@@ -337,26 +337,7 @@ if testwrite
 	fprintf('saving %s',strrep(outpath,'.tif','.eps'));
 	print(gcf, strrep(outpath,'.tif','.eps'), '-depsc', '-r300' );
 end
-%% ratios of hit rates and FAs at p < 0.05 corrected level
-hrMat = S.hrMns;
-faMat = S.faMns;
 %%
-aIX = S.aIX;
-alphaArr = S.alphaArr;
-hrVec05 = structfun(@(x) x(:,aIX),hrMat,'UniformOutput', false);
-faVec05 = structfun(@(x) x(:,aIX),faMat,'UniformOutput', false);
 
-%%
-mnHR05 = structfun(@(x) mean(x), hrVec05, 'UniformOutput', false);
-mnFA05 = structfun(@(x) mean(x), faVec05, 'UniformOutput', false);
 
-%% confirm sig diffs
-[hHV,pHV,ciHV,statsHV] = ttest(hrVec05.res,hrVec05.comp);
-[hFV,pFV,ciFV,statsFV] = ttest(faVec05.res,faVec05.comp);
-
-%% summary statement
-fprintf('at alpha_c = %0.2f, residuals mean HR = %0.2f%%, shuffling mean HR = %0.2f%%\n',...
-    alphaArr(aIX),mnHR05.res*100,mnHR05.comp*100);
-fprintf('at alpha_c = %0.2f, residuals mean FA = %0.2f%%, shuffling mean FA = %0.2f%%\n',...
-    alphaArr(aIX),mnFA05.res*100,mnFA05.comp*100);
 

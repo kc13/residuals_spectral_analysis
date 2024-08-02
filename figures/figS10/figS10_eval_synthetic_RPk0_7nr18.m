@@ -124,7 +124,7 @@ nexttile(TL)
 TLB = tiledlayout(TL,2,3,'Padding','compact','TileSpacing','compact'); 
 TLB.Layout.Tile = 2;
 TLB.TileIndexing = 'columnmajor';
-tstr = 'results sample #2: base FR-oscil. freq. = 2 Hz, moduation = 60%, 100 simulation iterations per cell';
+tstr = 'results sample #2: base FR-oscil. freq. = 2 Hz, modulation = 60%, 100 simulation iterations per cell';
 TLB.Title.String = tstr;
 TLB.Title.FontSize = 9;
 axis off; box off;
@@ -323,7 +323,7 @@ annotation(gcf,'textbox',[0.5 1-((1/nR)*(r-1))-h h h],...
         'Units','Normalized','String',['(',char('a'+(r)),')'],'EdgeColor','none','FontSize',10)
 		
 %%		
-testwrite = false;
+testwrite = true;
 if testwrite
     outdir = pwd;
     outfile = 'figS10_eval_synthetic_RPk0.7nr18.tif';
