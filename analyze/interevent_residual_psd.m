@@ -124,7 +124,8 @@ resopt.verbose = true;
 [resmat1,mdls1,rpInfoS] = getLastSpkResiduals(src_delta,resopt);
 psd_out.res = struct;
 psd_out.(resfld).mdls1 = mdls1;
-if ~storeAllExpMdls
+% 12/8/25 addressed issue for fixed order condition
+if ~storeAllExpMdls && isfield(rpInfoS,'expMdl') 
    psd_out.(resfld).rpInfoS = rmfield(rpInfoS,'expMdl'); 
 else
    psd_out.(resfld).rpInfoS = rpInfoS;

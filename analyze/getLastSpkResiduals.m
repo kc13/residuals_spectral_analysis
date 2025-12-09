@@ -56,7 +56,15 @@ if strcmp(model_order,'auto') % run RP estimation
 	end %if ~concat wins
 else % hard coded order
     order = model_order;
-    rpInfo.order = order;	
+    rpInfo.order = order;
+    % 12/8/25 addressing order_vec definition in this case
+    if ~concatWins
+        if ~oneModel
+            order_vec = order;
+        else 
+            order_vec = repmat(order,nW,1);
+        end
+    end
 end %if strcmp auto
 
 if runSplines && order >= splinePrefs.minSplPts
